@@ -42,25 +42,25 @@ CertificateChain is a **secure digital certificate management system** built usi
 
 ## Project Structure:
 
-```
-CertificateChain/
+```text
+CertificateChain/  
+📄 app.py       
+🔑 serviceAccountKey.json
+📄 serviceAccountKey_example.json
+📂 templates/
+    🔐 admin_login.html
+    📊 dashboard.html
+    ➕ add_student.html
+    ✏️ edit_student.html
+    🏛️ edit_student_chief.html
+    👁️ view_student.html
+    📜 view_log.html
+    🔍 verify_input.html
+📂 static/
+    🎨 style.css
+📄 .gitignore
+📄 README.md
 
-├── app.py
-├── serviceAccountKey.json
-├── serviceAccountKey_example.json
-├── templates/
-│ ├── admin_login.html
-│ ├── dashboard.html
-│ ├── add_student.html
-│ ├── edit_student.html
-│ ├── edit_student_chief.html
-│ ├── view_student.html
-│ ├── view_log.html
-│ └── verify_input.html
-├── static/
-│ └── style.css
-├── .gitignore
-└── README.md
 ```
 
 
@@ -71,12 +71,20 @@ CertificateChain/
 
 git clone https://github.com/Jakaria-Jihad/blockchain-certificate-verification.git
 
-```cd CertificateChain```
+```bash
+
+cd CertificateChain
+
+```
 
 
 ### 2. Install Dependencies
 
-`pip install -r requirements.txt`
+```python
+
+pip install -r requirements.txt`
+
+```
 
 
 Dependencies include:
@@ -107,17 +115,27 @@ Go to Firebase Console
 
 Set a secret key for Flask sessions (optional; defaults are provided):
 
-```export SECRET_KEY="your_secret_key_here"```
+```bash
+
+export SECRET_KEY="your_secret_key_here"
+
+```
 
 
 ### 5. Running the Application
 
-```python app.py```
+```python
+
+python app.py
+
+```
 
 
 Open your browser at: http://127.0.0.1:5000/
 
 Access admin login at: http://127.0.0.1:5000/admin/login
+
+Access public verify at: http://127.0.0.1:5000/verify
 
 
 ## Usage
