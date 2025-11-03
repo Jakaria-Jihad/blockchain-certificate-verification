@@ -71,7 +71,7 @@ CertificateChain/
 
 git clone https://github.com/Jakaria-Jihad/blockchain-certificate-verification.git
 
-```bash
+```sh
 
 cd CertificateChain
 
@@ -82,7 +82,7 @@ cd CertificateChain
 
 ```python
 
-pip install -r requirements.txt`
+pip install -r requirements.txt
 
 ```
 
@@ -115,7 +115,7 @@ Go to Firebase Console
 
 Set a secret key for Flask sessions (optional; defaults are provided):
 
-```bash
+```sh
 
 export SECRET_KEY="your_secret_key_here"
 
