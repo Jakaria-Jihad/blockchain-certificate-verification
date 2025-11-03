@@ -69,7 +69,11 @@ CertificateChain/
 
 ### 1. Clone the Repository
 
+```sh
+
 git clone https://github.com/Jakaria-Jihad/blockchain-certificate-verification.git
+
+```
 
 ```sh
 
