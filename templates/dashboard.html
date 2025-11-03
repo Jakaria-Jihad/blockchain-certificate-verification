@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ role|capitalize }} Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="topbar">
+    <h2>{{ role|capitalize }} Dashboard</h2>
+    <div class="top-actions">
+      <a href="{{ url_for('admin_logout') }}" class="btn">Logout</a>
+      {% if role in ['entry', 'chief'] %}
+        <a href="{{ url_for('add_student') }}" class="btn">Add Student</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="card">
+    <table class="glow-table">
+      <thead>
+        <tr>
+          <th>Student ID</th>
+          <th>Name</th>
+          <th>Major</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for s in students %}
+        <tr>
+          <td>{{ s.student_id }}</td>
+          <td>{{ s.name }}</td>
+          <td>{{ s.major }}</td>
+          <td>{% if s.get('finalized') or s.get('certificate_serial') %}Finalized{% else %}Draft{% endif %}</td>
+          <td>
+            {% if role == 'entry' %}
+              <!-- entry sees list but no actions -->
+              -
+            {% elif role == 'editor' %}
+              {% if not (s.get('finalized') or s.get('certificate_serial')) %}
+                <a href="{{ url_for('edit_student', student_id=s.student_id) }}" class="btn-small">Edit</a>
+              {% else %}
+                <span class="muted">Finalized</span>
+              {% endif %}
+            {% elif role == 'chief' %}
+              {% if not (s.get('finalized') or s.get('certificate_serial')) %}
+                <a href="{{ url_for('edit_student', student_id=s.student_id) }}" class="btn-small">Edit</a>
+                <a href="{{ url_for('finalize_student', student_id=s.student_id) }}" class="btn-small">Finalize</a>
+              {% else %}
+                <span class="muted">Finalized</span>
+              {% endif %}
+              <a href="{{ url_for('view_student', student_id=s.student_id) }}" class="btn-small">View</a>
+              <a href="{{ url_for('view_log', student_id=s.student_id) }}" class="btn-small">Log</a>
+              {% if s.get('finalized') or s.get('certificate_serial') %}
+                <a href="{{ url_for('download_pdf', student_id=s.student_id, mode='chief') }}" class="btn-small">Download (Chief)</a>
+                <a href="{{ url_for('download_pdf', student_id=s.student_id) }}" class="btn-small">Download (Student)</a>
+              {% endif %}
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Floating circular Refresh button (server-side reload) -->
+  <a class="fab" href="{{ url_for(role + '_dashboard') }}" title="Refresh ⟳">⟳</a>
+
+</body>
+</html>

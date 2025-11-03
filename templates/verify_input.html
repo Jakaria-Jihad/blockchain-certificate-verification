@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Verify Certificate</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="card">
+    <h2>Verify Certificate</h2>
+
+    <form method="post" action="{{ url_for('verify_input') }}">
+      <input name="security_hex" placeholder="Enter Security Hex" required>
+      <button type="submit">Verify</button>
+    </form>
+
+    {% if searched %}
+      {% if student %}
+        <div class="result">
+          <p><b>Name:</b> {{ student.name }}</p>
+          <p><b>Birth Date:</b> {{ student.birth_date }}</p>
+          <p><b>Student ID:</b> {{ student.student_id }}</p>
+          <p><b>Major:</b> {{ student.major }}</p>
+          <p><b>Security Hex:</b> {{ student.security_hex }}</p><br>
+          <p><b>Status:</b> Completed and verified</p>
+          <a class="btn" href="{{ url_for('download_pdf', student_id=student.student_id) }}">
+            Download Student Certificate
+          </a>
+        </div>
+      {% else %}
+        <div class="result">
+          <p><b>Data not found!</b></p>
+        </div>
+      {% endif %}
+    {% endif %}
+
+    <a class="btn" href="{{ url_for('home') }}">Home</a>
+  </div>
+</body>
+</html>

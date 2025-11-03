@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="card">
+    <h2>Certificate Chain</h2>
+    <a class="btn" href="{{ url_for('admin_login') }}">Admin Login</a>
+    <a class="btn" href="{{ url_for('verify_input') }}">Verify Certificate</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chief Admin Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <div class="topbar">
+    <h2>Chief Admin Dashboard</h2>
+    <div class="top-actions">
+      <a href="{{ url_for('logout') }}" class="btn">Logout</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 class="muted">Draft Students</h3>
+    <table class="glow-table">
+      <thead>
+        <tr>
+          <th>Student ID</th>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Session</th>
+          <th>CGPA</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for s in drafts %}
+        <tr>
+          <td>{{ s.student_id }}</td>
+          <td>{{ s.name }}</td>
+          <td>{{ s.department }}</td>
+          <td>{{ s.session }}</td>
+          <td>{{ s.get('cgpa', 'N/A') }}</td>
+          <td>
+            <a href="{{ url_for('view_student', student_id=s.student_id) }}" class="btn-small">View</a>
+            <a href="{{ url_for('chief_edit_student', student_id=s.student_id) }}" class="btn-small">Edit</a>
+            <a href="{{ url_for('finalize_student', student_id=s.student_id) }}" 
+               class="btn-small"
+               onclick="return confirm('Finalize this student? Once finalized, the draft will be deleted!');">
+               Finalize
+            </a>
+            <a href="{{ url_for('view_log', student_id=s.student_id) }}" class="btn-small">Log</a>
+          </td>
+        </tr>
+        {% else %}
+        <tr><td colspan="6" class="muted">No draft students available.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3 class="muted">Finalized Students (Blockchain)</h3>
+    <table class="glow-table">
+      <thead>
+        <tr>
+          <th>Student ID</th>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Session</th>
+          <th>CGPA</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for s in finals %}
+        <tr>
+          <td>{{ s.student_id }}</td>
+          <td>{{ s.name }}</td>
+          <td>{{ s.department }}</td>
+          <td>{{ s.session }}</td>
+          <td>{{ s.get('cgpa', 'N/A') }}</td>
+          <td><span class="muted">Finalized</span></td>
+          <td><a href="{{ url_for('view_log', student_id=s.student_id) }}" class="btn-small">Log</a></td>
+        </tr>
+        {% else %}
+        <tr><td colspan="7" class="muted">No finalized students found.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Floating Refresh Button -->
+  <a href="#" class="fab" onclick="location.reload()">⟳</a>
+
+</body>
+</html>

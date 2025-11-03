@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>View Student</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="card">
+    <h2>Student Details</h2>
+    <ul class="student-list">
+      <li><b>ID:</b> {{ student.student_id }}</li>
+      <li><b>Name:</b> {{ student.name }}</li>
+      <li><b>Major:</b> {{ student.major }}</li>
+      <li><b>CGPA:</b> {{ student.get('cgpa','N/A') }}</li>
+      <li><b>Birth Date:</b> {{ student.get('birth_date','N/A') }}</li>
+      <li><b>Security Hex:</b> {{ student.get('security_hex','N/A') }}</li>
+      <li><b>Certificate Serial:</b> {{ student.get('certificate_serial','N/A') }}</li>
+    </ul>
+
+    <div class="actions-row">
+      <a class="btn" href="{{ url_for('chief_dashboard') }}">Back to Dashboard</a>
+      <a class="btn" href="{{ url_for('download_pdf', student_id=student.student_id, mode='chief') }}">Download (Chief)</a>
+      <a class="btn" href="{{ url_for('download_pdf', student_id=student.student_id) }}">Download (Student)</a>
+    </div>
+  </div>
+</body>
+</html>

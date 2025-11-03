@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Student - Chief</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <div class="topbar">
+    <h2>Edit Student - Chief</h2>
+    <div class="top-actions">
+      <a href="{{ url_for('chief_dashboard') }}" class="btn">Back</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <form method="post">
+      <input type="text" name="name" placeholder="Name" value="{{ student.name }}" required>
+      <input type="text" name="major" placeholder="Major" value="{{ student.major }}" required>
+      <input type="date" name="birth_date" placeholder="Birth Date" value="{{ student.get('birth_date','') }}">
+      <input type="number" step="0.01" name="cgpa" placeholder="CGPA" value="{{ student.get('cgpa','') }}">
+      <div class="actions-row">
+        <button type="submit">Update</button>
+        <a href="{{ url_for('chief_dashboard') }}" class="btn-small">Cancel</a>
+      </div>
+    </form>
+  </div>
+
+  <!-- Floating Refresh Button -->
+  <a href="#" class="fab" onclick="location.reload()">⟳</a>
+
+</body>
+</html>

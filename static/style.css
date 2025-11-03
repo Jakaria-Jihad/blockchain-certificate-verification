@@ -1,0 +1,120 @@
+/* Base */
+:root{
+  --bg:#0b0b0d;
+  --card:#0f0b12;
+  --accent1:#6a0dad;
+  --accent2:#ff00ff;
+  --muted:#9b8aa8;
+  --text:#f3eaff;
+  --glow: 0 0 18px rgba(106,13,173,0.35);
+}
+
+html,body{height:100%;margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter, Arial, sans-serif}
+
+/* Card */
+.card{
+  width:90%;
+  max-width:1100px;
+  margin:40px auto;
+  padding:22px;
+  background: linear-gradient(180deg, rgba(20,10,20,0.65), rgba(12,6,12,0.85));
+  border-radius:12px;
+  box-shadow: var(--glow);
+}
+
+/* Top bar */
+.topbar{
+  width:90%;
+  max-width:1100px;
+  margin:26px auto 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.topbar h2{margin:0;color:var(--accent2)}
+.top-actions .btn{margin-left:8px}
+
+/* Inputs & buttons */
+input,select{
+  width:96%;
+  padding:10px 12px;
+  margin:8px auto;
+  display:block;
+  border-radius:8px;
+  border:1px solid rgba(106,13,173,0.18);
+  background:#111;
+  color:var(--text);
+}
+button, .btn{
+  display:inline-block;
+  background: linear-gradient(90deg,var(--accent1),var(--accent2));
+  color:#fff;
+  padding:10px 14px;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+  text-decoration:none;
+}
+button:hover, .btn:hover{ box-shadow: 0 0 26px rgba(255,0,255,0.14); transform:translateY(-2px); }
+
+/* small action */
+.btn-small{
+  display:inline-block;padding:6px 10px;border-radius:6px;margin:2px;background:transparent;border:1px solid rgba(106,13,173,0.3);color:var(--accent2);text-decoration:none;
+}
+.btn-small:hover{ background: rgba(106,13,173,0.08) }
+
+/* Table with gradient header + purple glow borders */
+.glow-table{ width:100%; border-collapse:collapse; margin-top:10px; }
+.glow-table thead th{
+  background: linear-gradient(90deg, rgba(20,5,20,1), rgba(80,10,80,0.95));
+  color:var(--accent2);
+  padding:12px;
+  border-bottom:2px solid rgba(106,13,173,0.25);
+  box-shadow: 0 4px 18px rgba(106,13,173,0.06) inset;
+}
+.glow-table td{
+  padding:10px;
+  border-bottom:1px solid rgba(106,13,173,0.06);
+  background: linear-gradient(180deg, rgba(10,6,10,0.2), rgba(8,4,8,0.4));
+}
+.glow-table tr:hover td{ background: linear-gradient(90deg, rgba(58,20,58,0.25), rgba(80,10,80,0.18)); }
+
+/* muted text */
+.muted{ color:var(--muted); font-size:0.95em; }
+
+/* flash list */
+.flash{ list-style:none; padding:0; margin-top:12px; color:var(--accent2); text-align:center }
+
+/* student list */
+.student-list{ list-style:none; padding:0; margin:10px 0; }
+.student-list li{ padding:8px 0; border-bottom:1px dashed rgba(106,13,173,0.06) }
+
+/* actions row */
+.actions-row{ display:flex; gap:12px; margin-top:12px; }
+
+/* Floating circular refresh button (FAB) bottom-right */
+.fab{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  width:56px;
+  height:56px;
+  line-height:56px;
+  text-align:center;
+  background: linear-gradient(90deg,var(--accent2),var(--accent1));
+  color:#060006;
+  font-weight:bold;
+  font-size:20px;
+  border-radius:50%;
+  box-shadow: 0 6px 22px rgba(106,13,173,0.4);
+  text-decoration:none;
+  z-index:9999;
+}
+.fab:hover{ transform:translateY(-4px); box-shadow: 0 10px 36px rgba(106,13,173,0.55) }
+
+/* responsive */
+@media (max-width:700px){
+  .card{ padding:14px }
+  .topbar{ flex-direction:column; gap:10px; align-items:flex-start }
+  .fab{ right:12px; bottom:12px; width:48px; height:48px; line-height:48px }
+}
