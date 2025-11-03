@@ -43,21 +43,37 @@ CertificateChain is a **secure digital certificate management system** built usi
 ## Project Structure
 
 CertificateChain/
+
 ├── app.py # Flask backend
+
 ├── serviceAccountKey.json # Firebase credentials (ignored in git)
+
 ├── serviceAccountKey_example.json # Placeholder JSON for setup
+
 ├── templates/
+
 │ ├── admin_login.html
+
 │ ├── dashboard.html
+
 │ ├── add_student.html
+
 │ ├── edit_student.html
+
 │ ├── edit_student_chief.html
+
 │ ├── view_student.html
+
 │ ├── view_log.html
+
 │ └── verify_input.html
+
 ├── static/
+
 │ └── style.css
+
 ├── .gitignore
+
 └── README.md
 
 
@@ -67,6 +83,7 @@ CertificateChain/
 ### 1. Clone the Repository
 
 git clone https://github.com/Jakaria-Jihad/blockchain-certificate-verification.git
+
 cd CertificateChain
 
 
