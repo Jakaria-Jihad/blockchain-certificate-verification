@@ -40,7 +40,7 @@ CertificateChain is a **secure digital certificate management system** built usi
 - **Security**: Hashing with SHA256, Blockchain-inspired data integrity
 
 
-Project Structure:
+## Project Structure:
 
 CertificateChain/
 ├── app.py                       # Flask backend
