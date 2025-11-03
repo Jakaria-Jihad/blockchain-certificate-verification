@@ -45,22 +45,22 @@ CertificateChain is a **secure digital certificate management system** built usi
 ```
 CertificateChain/
 
-├── app.py # Flask backend
-├── serviceAccountKey.json # Firebase credentials (ignored in git)
-├── serviceAccountKey_example.json # Placeholder JSON for setup
-├── templates/ # HTML templates
-│ ├── admin_login.html # Admin login page
-│ ├── dashboard.html # Role-based dashboard
-│ ├── add_student.html # Form to add new students
-│ ├── edit_student.html # Edit student (Entry/Editor)
-│ ├── edit_student_chief.html # Edit student (Chief Admin)
-│ ├── view_student.html # View student details
-│ ├── view_log.html # View student action logs
-│ └── verify_input.html # Public certificate verification page
-├── static/ # Static files
-│ └── style.css # Unified dark/mauve/purple CSS
-├── .gitignore # Git ignore file (includes serviceAccountKey.json)
-└── README.md # Project documentation and usage guide
+├── app.py
+├── serviceAccountKey.json
+├── serviceAccountKey_example.json
+├── templates/
+│ ├── admin_login.html
+│ ├── dashboard.html
+│ ├── add_student.html
+│ ├── edit_student.html
+│ ├── edit_student_chief.html
+│ ├── view_student.html
+│ ├── view_log.html
+│ └── verify_input.html
+├── static/
+│ └── style.css
+├── .gitignore
+└── README.md
 ```
 
 
@@ -71,7 +71,7 @@ CertificateChain/
 
 git clone https://github.com/Jakaria-Jihad/blockchain-certificate-verification.git
 
-`cd CertificateChain`
+```cd CertificateChain```
 
 
 ### 2. Install Dependencies
@@ -107,12 +107,12 @@ Go to Firebase Console
 
 Set a secret key for Flask sessions (optional; defaults are provided):
 
-`export SECRET_KEY="your_secret_key_here"`
+```export SECRET_KEY="your_secret_key_here"```
 
 
 ### 5. Running the Application
 
-`python app.py`
+```python app.py```
 
 
 Open your browser at: http://127.0.0.1:5000/
@@ -131,7 +131,7 @@ Access admin login at: http://127.0.0.1:5000/admin/login
 
 #### 2. Editor Admin
 
-1. Edit existing students that are not finalized.
+1. Edit existing students who are not finalized.
 
 2. Cannot add new students or edit finalized ones.
 
