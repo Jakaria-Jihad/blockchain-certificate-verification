@@ -40,41 +40,26 @@ CertificateChain is a **secure digital certificate management system** built usi
 - **Security**: Hashing with SHA256, Blockchain-inspired data integrity
 
 
-## Project Structure
+Project Structure:
 
 CertificateChain/
-
-├── app.py # Flask backend
-
-├── serviceAccountKey.json # Firebase credentials (ignored in git)
-
+├── app.py                       # Flask backend
+├── serviceAccountKey.json        # Firebase credentials (ignored in git)
 ├── serviceAccountKey_example.json # Placeholder JSON for setup
+├── templates/                    # HTML templates
+│   ├── admin_login.html          # Admin login page
+│   ├── dashboard.html            # Role-based dashboard
+│   ├── add_student.html          # Form to add new students
+│   ├── edit_student.html         # Edit student (Entry/Editor)
+│   ├── edit_student_chief.html   # Edit student (Chief Admin)
+│   ├── view_student.html         # View student details
+│   ├── view_log.html             # View student action logs
+│   └── verify_input.html         # Public certificate verification page
+├── static/                       # Static files
+│   └── style.css                 # Unified dark/mauve/purple CSS
+├── .gitignore                    # Git ignore file (includes serviceAccountKey.json)
+└── README.md                     # Project documentation and usage guide
 
-├── templates/
-
-│ ├── admin_login.html
-
-│ ├── dashboard.html
-
-│ ├── add_student.html
-
-│ ├── edit_student.html
-
-│ ├── edit_student_chief.html
-
-│ ├── view_student.html
-
-│ ├── view_log.html
-
-│ └── verify_input.html
-
-├── static/
-
-│ └── style.css
-
-├── .gitignore
-
-└── README.md
 
 
 
