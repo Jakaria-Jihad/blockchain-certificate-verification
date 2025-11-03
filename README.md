@@ -66,7 +66,7 @@ CertificateChain/
 
 ### 1. Clone the Repository
 
-git clone https://github.com/YOUR_USERNAME/CertificateChain.git
+git clone https://github.com/Jakaria-Jihad/blockchain-certificate-verification.git
 cd CertificateChain
 
 
