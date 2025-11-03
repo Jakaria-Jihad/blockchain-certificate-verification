@@ -28,7 +28,7 @@ CertificateChain is a **secure digital certificate management system** built usi
   - Edit, view, finalize, and log actions based on role.
 - Floating **refresh button** to reload lists dynamically.
 
----
+
 
 ## Tech Stack
 
@@ -84,46 +84,48 @@ CertificateChain/
 
 git clone https://github.com/Jakaria-Jihad/blockchain-certificate-verification.git
 
-cd CertificateChain
+`cd CertificateChain`
 
 
 ### 2. Install Dependencies
 
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 
 Dependencies include:
 
-flask
+- flask
 
-firebase-admin
+- firebase-admin
 
-fpdf
+- fpdf
 
 
 ### 3. Firebase Configuration
 
 Go to Firebase Console
 
-Create a new project.
+- Create a new project.
 
-Navigate to Project Settings → Service Accounts → Generate New Private Key.
+- Navigate to Project Settings → Service Accounts → Generate New Private Key.
 
-Download the serviceAccountKey.json file. (you may need to rename it)
+- Download the serviceAccountKey.json file. (you may need to rename it)
 
-Place it in the project root.
+- Place it in the project root.
+
+⚠️ Do not commit serviceAccountKey.json to GitHub.
 
 
 ### 4. Environment Variables
 
 Set a secret key for Flask sessions (optional; defaults are provided):
 
-export SECRET_KEY="your_secret_key_here"
+`export SECRET_KEY="your_secret_key_here"`
 
 
 ### 5. Running the Application
 
-python app.py
+`python app.py`
 
 
 Open your browser at: http://127.0.0.1:5000/
@@ -174,7 +176,7 @@ Access admin login at: http://127.0.0.1:5000/admin/login
 
 5. Analytics Dashboard to track student certificates and verification statistics.
 
-## Security Notes
+## 🔒 Security Notes
 
 **Never commit serviceAccountKey.json to GitHub.**
 
@@ -182,10 +184,13 @@ Access admin login at: http://127.0.0.1:5000/admin/login
 
 **Only the Chief Admin can access the full certificate metadata.**
 
-## Contact
+## 📬 Contact
 
-The project was developed as a demonstration of a secure certificate management system.
+Developed as a demonstration of a secure certificate management system.
 For inquiries, contact:
-**Md. Jakaria Hossain Jihad**
-@jakariahossen669@gmail.com or 
-@jakaria.jihad@northsouth.edu
+
+Md. Jakaria Hossain Jihad
+
+📧 jakariahossen669@gmail.com
+
+🏫 jakaria.jihad@northsouth.edu
