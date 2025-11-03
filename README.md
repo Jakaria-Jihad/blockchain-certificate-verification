@@ -44,20 +44,35 @@ Project Structure:
 
 CertificateChain/
 ├── app.py                       # Flask backend
+
 ├── serviceAccountKey.json        # Firebase credentials (ignored in git)
+
 ├── serviceAccountKey_example.json # Placeholder JSON for setup
+
 ├── templates/                    # HTML templates
+
 │   ├── admin_login.html          # Admin login page
+
 │   ├── dashboard.html            # Role-based dashboard
+
 │   ├── add_student.html          # Form to add new students
+
 │   ├── edit_student.html         # Edit student (Entry/Editor)
+
 │   ├── edit_student_chief.html   # Edit student (Chief Admin)
+
 │   ├── view_student.html         # View student details
+
 │   ├── view_log.html             # View student action logs
+
 │   └── verify_input.html         # Public certificate verification page
+
 ├── static/                       # Static files
+
 │   └── style.css                 # Unified dark/mauve/purple CSS
+
 ├── .gitignore                    # Git ignore file (includes serviceAccountKey.json)
+
 └── README.md                     # Project documentation and usage guide
 
 
