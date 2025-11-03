@@ -39,7 +39,6 @@ CertificateChain is a **secure digital certificate management system** built usi
 - **Frontend**: HTML, CSS (Dark/Mauve/Purple theme)
 - **Security**: Hashing with SHA256, Blockchain-inspired data integrity
 
----
 
 ## Project Structure
 
@@ -62,7 +61,6 @@ CertificateChain/
 └── README.md
 
 
----
 
 ## Setup Instructions
 
